@@ -29,7 +29,7 @@ h1, h2, h3 {
 .memory-box {
     background: rgba(255, 255, 255, 0.7);
     border-radius: 15px;
-    padding: 30px 100px 30px 100px;
+    padding: 30px 100px;
     margin: 20px 0;
     text-align: justify;
 }
@@ -55,13 +55,26 @@ h1, h2, h3 {
     font-size: 16px;
     color: #444;
 }
+.album-box {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 30px 0;
+    text-align: center;
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.1);
+}
+.album-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ff1493;
+    margin-bottom: 15px;
+}
 </style>
 """
 st.markdown(page_bg, unsafe_allow_html=True)
 
 # Target Date
 target_date = ist.localize(datetime.datetime(2025, 10, 28, 0, 0, 0))
-# target_date = datetime.datetime(2025, 10, 28, 0, 0, 0)
 
 # Title
 st.markdown("<h1>⏳ One Month To Go! 🎂</h1>", unsafe_allow_html=True)
@@ -75,11 +88,10 @@ st.markdown(
     <p>
     Meri jaan, aaj se exactly ek mahine baad aapka birthday aa raha hai 💕<br>
     Aur main already excited hoon aapke surprises ke liye! 🥰<br>
-    Hihihi aapko kya laga mai website ke baare me bhool gaya...😎<br>
     Har memory aapke saath ek nayi kahani likhti hai -<br>
-    Hamara vo first unexpected unwanted meetup 😂, woh JEE vaali baatein, <br>
-    vo first call us din shaam ko chhat pr, aur hamara bhaiyaa se saiyaann tak ka safar 🤣, <br>
-    sab kuch yaad karenge aapki birthday par 😍✨  
+    Hamara vo first unexpected unwanted meetup 😂, woh JEE vaali baatein,<br>
+    vo first call us din shaam ko chhat pr, aur hamara bhaiyaa se saiyaann tak ka safar 🤣,<br>
+    sab kuch yaad karenge aapki birthday par 😍✨
     </p>
     <p>Chaliye countdown shuru karte hain... aapke special din ke liye! 🎂🎁</p>
     </div>
@@ -126,11 +138,19 @@ while True:
             """,
             unsafe_allow_html=True,
         )
+
+        # Album teaser
         st.markdown(
             """
-            <div class='memory-box'>
-            <p style='font-size:18px;'>💌 Har second aapke SPECIAL DAY ki taraf ek aur step hai...💞<br>
-            😚 Can't wait to celebrate YOU TURNING 19 MERI JAAANNNN! 🩷</p>
+            <div class='album-box'>
+                <div class='album-title'>💌 Coming Soon: A Special Album 💌</div>
+                <p>
+                Ye countdown sirf birthday ke liye hi nahi hai...  
+                Saath hi aa rahi hai ek <b>pyari si album</b>,  
+                jisme hongi <b>best memories, candid (aur kuch kuch random🙃) photos, aur chhoti chhoti kahaniyaan</b> 💕  
+                Just like a <i>digital diary</i>, sirf ham dono ke liye! 📸✨
+                </p>
+                <p style='font-size:18px; color:#ff3366;'>Stay tuned... the best surprise is yet to come! 🎶</p>
             </div>
             """,
             unsafe_allow_html=True,
