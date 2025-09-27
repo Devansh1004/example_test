@@ -1,6 +1,10 @@
 import streamlit as st
 import datetime
 import time
+import pytz
+
+# Define IST timezone
+ist = pytz.timezone("Asia/Kolkata")
 
 # Page Config
 st.set_page_config(page_title="❤️ One Month To Go ❤️", page_icon="🎉", layout="centered")
@@ -56,7 +60,8 @@ h1, h2, h3 {
 st.markdown(page_bg, unsafe_allow_html=True)
 
 # Target Date
-target_date = datetime.datetime(2025, 10, 28, 0, 0, 0)
+target_date = ist.localize(datetime.datetime(2025, 10, 28, 0, 0, 0))
+# target_date = datetime.datetime(2025, 10, 28, 0, 0, 0)
 
 # Title
 st.markdown("<h1>⏳ One Month To Go! 🎂</h1>", unsafe_allow_html=True)
@@ -84,7 +89,7 @@ st.markdown(
 
 # Countdown function
 def countdown(target):
-    now = datetime.datetime.now()
+    now = datetime.datetime.now(ist)
     diff = target - now
     days, seconds = diff.days, diff.seconds
     hours = seconds // 3600
